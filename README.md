@@ -20,6 +20,12 @@ build and test run in localhost:8080
 .\gradlew.bat clean build war appRun
 ```
 
-access web browser http://localhost:8080/javafat/
+access with web browser http://localhost:8080/javafat/
+
+
+after all, stop gradle daemon
+```
+gradle --stop
+```
 
 
