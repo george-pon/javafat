@@ -9,12 +9,12 @@ public class HashMapSingleton {
 
 	private HashMap<String, String> datamap = new HashMap<String, String>();
 
-	// プライベートなコンストラクタ
+	// 繝励Λ繧､繝吶�ｼ繝医↑繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ
 	private HashMapSingleton() {
 
 	}
 
-	// シングルトンを得る
+	// 繧ｷ繝ｳ繧ｰ繝ｫ繝医Φ繧貞ｾ励ｋ
 	public synchronized static HashMapSingleton getInstance() {
 		if (instance == null) {
 			instance = new HashMapSingleton();
@@ -22,7 +22,7 @@ public class HashMapSingleton {
 		return instance;
 	}
 
-	// データ保存用のmapを得る
+	// 繝�繝ｼ繧ｿ菫晏ｭ倡畑縺ｮmap繧貞ｾ励ｋ
 	public Map<String, String> getMap() {
 		return this.datamap;
 	}

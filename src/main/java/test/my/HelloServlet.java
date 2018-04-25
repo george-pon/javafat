@@ -2,6 +2,7 @@ package test.my;
 
 import java.io.IOException;
 import java.util.Random;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,6 +33,11 @@ public class HelloServlet extends HttpServlet {
 			mps = "1";
 		}
 
+		String cps = request.getParameter("cps");
+		if (cps == null) {
+			cps = "1";
+		}
+
 		String count = request.getParameter("count");
 		if (count == null) {
 			count = "0";
@@ -44,27 +50,49 @@ public class HelloServlet extends HttpServlet {
 
 		long longsum = Long.parseLong(sum);
 		long longmps = Long.parseLong(mps);
+		long longcps = Long.parseLong(cps);
 		long longcount = Long.parseLong(count);
 
 		{
-			// ����
+			// メモリ消費処理
+			// 乱数
 			Random r = new Random();
 			// generate string data
 			String s = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 			StringBuffer sb = new StringBuffer();
 			while (sb.length() < longmps * 1024 * 1024) {
-				// �����_���Ɉꕶ���ǉ�
+				// ランダムに一文字追加
 				int idx = r.nextInt(s.length());
 				sb.append(s.charAt(idx));
-				// �c��͓���
+				// 残りは同じ
 				sb.append(s);
 			}
 			// save to singleton hash map
 			HashMapSingleton.getInstance().getMap().put(count, sb.toString());
 			longsum += longmps;
 		}
+		{
+			// CPU消費処理
+			long startDate = new Date().getTime();
+			Random r = new Random();
+			while (true) {
+				long nowDate = new Date().getTime();
+				// 時間のかかる処理をここで行う
+				String s = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+				StringBuffer sb = new StringBuffer();
+				while (sb.length() < longmps * 1024 * 1024) {
+					// ランダムに一文字追加
+					int idx = r.nextInt(s.length());
+					sb.append(s.charAt(idx));
+				}
+				if ( nowDate - startDate > longcps * 1000 ) {
+					break;
+				}
+			}
+		}
 
 		request.setAttribute("mps", mps);
+		request.setAttribute("cps", cps);
 		longcount++;
 		request.setAttribute("count", "" + longcount);
 		request.setAttribute("sum", "" + longsum);

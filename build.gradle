@@ -1,3 +1,4 @@
+
 plugins {
     id 'war'
     id 'org.akhikhl.gretty' version '1.4.2'
@@ -12,3 +13,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
