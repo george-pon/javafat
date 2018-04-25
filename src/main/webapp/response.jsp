@@ -23,7 +23,7 @@
 </script>
 <body onLoad="tm()">
 	<h2>javafat - memory eater / cpu eater</h2>
-	<p>５秒ごとに自動でリロード。消費メモリが増えていく。</p>
+	<p>５秒ごとに自動でリロードする。リロード毎に指定したMBytesだけ消費メモリが増えていく。リロード毎に指定した秒数だけCPUを全力で使う。</p>
 	<form method="post" name="mpsform" action="mps">
 		<table>
 			<tr>

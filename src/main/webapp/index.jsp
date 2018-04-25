@@ -8,7 +8,8 @@
 <title>javafat - heap memory eater</title>
 </head>
 <body>
-	<h1>javafat - heap memory eater</h1>
+	<h1>javafat - heap memory eater / cpu eater</h1>
+	<p>５秒ごとに自動でリロードする。リロード毎に指定したMBytesだけ消費メモリが増えていく。リロード毎に指定した秒数だけCPUを全力で使う。</p>
 
 	<form method="post" action="mps">
 		<table>
