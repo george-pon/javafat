@@ -1,5 +1,5 @@
 # javafat
-heap memory eater for heap memory test java web app (jsp/servlet)
+heap memory eater / cpu eater for memory limit / cpu limit test java web app (jsp/servlet)
 
 ### how to use
 

@@ -22,7 +22,7 @@
 //-->
 </script>
 <body onLoad="tm()">
-	<h2>javafat - memory use</h2>
+	<h2>javafat - memory eater / cpu eater</h2>
 	<p>５秒ごとに自動でリロード。消費メモリが増えていく。</p>
 	<form method="post" name="mpsform" action="mps">
 		<table>
@@ -30,6 +30,10 @@
 				<td>memory use (mega bytes) per count:</td>
 				<td><input type="text" id="mps-text-input" name="mps"
 					value="${mps}" /></td>
+			</tr>
+			<tr>
+				<td>cpu use ( second ) per page view :</td>
+				<td><input type="text" id="cps-text-input" name="cps" value="${cps}" /></td>
 			</tr>
 			<tr>
 				<td>count:</td>
@@ -42,8 +46,7 @@
 					value="${sum}" readonly /></td>
 			</tr>
 			<tr>
-				<td><input type="submit" id="mpsnextbutton" value="Next" /></td>
-				<td></td>
+				<td colspan=2><input type="submit" id="mpsnextbutton" value="Next" /></td>
 			</tr>
 		</table>
 	</form>

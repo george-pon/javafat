@@ -13,13 +13,16 @@
 	<form method="post" action="mps">
 		<table>
 			<tr>
-				<td>memory use (Mega bytes) per count:</td>
+				<td>memory use (Mega bytes) per page view :</td>
 				<td><input type="text" id="mps-text-input" name="mps" /></td>
 			</tr>
 			<tr>
-				<td><input type="submit" id="mps-button"
+				<td>cpu use ( second ) per page view :</td>
+				<td><input type="text" id="cps-text-input" name="cps" /></td>
+			</tr>
+			<tr>
+				<td colspan=2><input type="submit" id="mps-button"
 					value="Submit" /></td>
-				<td></td>
 			</tr>
 		</table>
 	</form>
