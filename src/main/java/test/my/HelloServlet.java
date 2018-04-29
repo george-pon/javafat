@@ -80,7 +80,7 @@ public class HelloServlet extends HttpServlet {
 				// 時間のかかる処理をここで行う
 				String s = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 				StringBuffer sb = new StringBuffer();
-				while (sb.length() < longmps * 1024 * 1024) {
+				while (sb.length() < 1 * 1024 * 1024) {
 					// ランダムに一文字追加
 					int idx = r.nextInt(s.length());
 					sb.append(s.charAt(idx));
