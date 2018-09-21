@@ -3,21 +3,23 @@ heap memory eater / cpu eater for memory limit / cpu limit test java web app (js
 
 ### how to use
 
-install gradle. see https://gradle.org/install/ Gradle | Installation 
-in Windows, install gradle with chocolatey.
+install gradle (if you have not). see https://gradle.org/install/ Gradle | Installation 
+in Windows, install gradle with chocolatey. see https://chocolatey.org/ Chocolatey - The package manager for Windows
 ```
 choco install -y gradle
 ```
 
-create gradle wrapper file.
-see https://guides.gradle.org/building-java-web-applications/ Building Java Web Applications
-```
-gradle wrapper --gradle-version=4.5
-```
-
 build and test run in localhost:8080
 ```
-.\gradlew.bat clean build war appRun
+# see gradle tasks
+gradle tasks
+
+# build
+gradle build
+
+# run
+# gradle appRun # run in gretty ?
+gradle tomcatRun  # run on tomcat
 ```
 
 access with web browser http://localhost:8080/javafat/

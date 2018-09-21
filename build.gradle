@@ -1,7 +1,7 @@
 
 plugins {
     id 'war'
-    id 'org.akhikhl.gretty' version '1.4.2'
+    id 'org.gretty' version '2.2.0'
 }
 
 repositories {
@@ -11,8 +11,8 @@ repositories {
 dependencies {
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
     testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.19'
 }
-
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
